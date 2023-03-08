@@ -1,7 +1,6 @@
 package com.entgra.Task02.model;
 
 import lombok.*;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,6 @@ public class IssueStatus {
     private  @NonNull int statusId;
     @Column(name = "status")
     private  String status;
-
     @OneToMany(mappedBy = "issueStatus")
     private List<Issue> issues = new ArrayList<>();
 }

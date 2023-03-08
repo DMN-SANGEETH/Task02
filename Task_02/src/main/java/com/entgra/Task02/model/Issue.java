@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-
 import javax.persistence.*;
 import java.util.Date;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -15,6 +15,7 @@ import java.util.Date;
 @Getter
 @DynamicInsert
 @DynamicUpdate
+
 public class Issue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,11 +33,14 @@ public class Issue {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "states_id")
+    @JsonIgnore
     private  IssueStatus issueStatus;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "issue_tyep_id")
+    @JoinColumn(name = "issue_type_id")
+    @JsonIgnore
     private  IssueType issueType;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private  User user;
 }

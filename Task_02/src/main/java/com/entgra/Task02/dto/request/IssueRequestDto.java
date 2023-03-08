@@ -11,7 +11,7 @@ import java.util.Date;
 @DynamicInsert
 @DynamicUpdate
 public class IssueRequestDto {
-    private  @NonNull int issueId;
+    private int issueId;
     private  String projectName;
     private int issueTypeId;
     private  String subject;
