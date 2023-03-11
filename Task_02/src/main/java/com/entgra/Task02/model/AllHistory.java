@@ -1,15 +1,15 @@
 package com.entgra.Task02.model;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
+import javax.persistence.*;
+import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -17,12 +17,15 @@ import java.util.List;
 @Getter
 @DynamicInsert
 @DynamicUpdate
-
-public class Issue {
+public class AllHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "issue_id")
-    private int issueId;
+    @Column(name = "id")
+    private int id;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "issue_id")
+    @JsonIgnore
+    private Issue issueId;
     @Column(name = "project_name")
     private  String projectName;
     @Column(name = "subject")
@@ -31,7 +34,7 @@ public class Issue {
     private  String description;
     @Temporal(TemporalType.DATE)
     @Column(name = "publication_date")
-    private  Date publicationDate;
+    private Date publicationDate;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "states_id")
@@ -45,7 +48,4 @@ public class Issue {
     @JoinColumn(name = "user_id")
     @JsonIgnore
     private  User user;
-    @OneToMany(mappedBy = "issueId")
-    private List<AllHistory> allHistories = new ArrayList<>();
-
 }

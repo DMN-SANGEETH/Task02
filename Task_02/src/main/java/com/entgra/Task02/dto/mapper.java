@@ -38,6 +38,7 @@ public class mapper {
         IssueStatus issueStatus = issue.getIssueStatus();
         issueStatusDto.setStatusId(issueStatus.getStatusId());
         issueStatusDto.setStatus(issueStatus.getStatus());
+        issueStatusDto.setCount(issueStatus.getCount());
 
         issueResponseDto.setIssueStatus(issueStatusDto);
 

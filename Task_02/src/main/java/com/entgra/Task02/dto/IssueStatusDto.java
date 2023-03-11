@@ -4,6 +4,8 @@ import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import javax.persistence.Column;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -13,4 +15,5 @@ import org.hibernate.annotations.DynamicUpdate;
 public class IssueStatusDto {
     private  @NonNull int statusId;
     private  String status;
+    private  int count;
 }

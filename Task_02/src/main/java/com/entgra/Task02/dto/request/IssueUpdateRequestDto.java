@@ -4,6 +4,8 @@ import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -12,5 +14,6 @@ import org.hibernate.annotations.DynamicUpdate;
 @DynamicUpdate
 public class IssueUpdateRequestDto {
     private int statusId;
+    private Date publicationDate;
 
 }

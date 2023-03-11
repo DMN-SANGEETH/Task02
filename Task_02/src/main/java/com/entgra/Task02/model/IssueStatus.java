@@ -17,6 +17,9 @@ public class IssueStatus {
     private  @NonNull int statusId;
     @Column(name = "status")
     private  String status;
+    @Column(name = "count")
+    private  int count;
+
     @OneToMany(mappedBy = "issueStatus")
     private List<Issue> issues = new ArrayList<>();
 }

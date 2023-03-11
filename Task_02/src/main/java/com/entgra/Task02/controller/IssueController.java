@@ -2,6 +2,7 @@ package com.entgra.Task02.controller;
 import com.entgra.Task02.dto.IssueDto;
 import com.entgra.Task02.dto.request.IssueRequestDto;
 import com.entgra.Task02.dto.request.IssueUpdateRequestDto;
+import com.entgra.Task02.dto.response.AllHistoryResponseDto;
 import com.entgra.Task02.dto.response.IssueResponseDto;
 import com.entgra.Task02.model.Issue;
 import com.entgra.Task02.service.IssueService;

@@ -9,5 +9,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 @EnableJpaRepositories
 public interface IssueTypeRepo extends JpaRepository<IssueType, Integer> {
-    //IssueType findByIssueTypeId(int issueTypeId);
 }
