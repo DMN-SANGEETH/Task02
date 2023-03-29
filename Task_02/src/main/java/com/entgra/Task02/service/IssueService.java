@@ -13,5 +13,5 @@ public interface IssueService {
     List<IssueResponseDto> allIssues();
     Issue saveissue(IssueRequestDto issueRequestDto);
     Issue updateState(int issueId, IssueUpdateRequestDto issueUpdateRequestDto);
-
+    List<IssueResponseDto> issuesStatusById(int statusId);
 }

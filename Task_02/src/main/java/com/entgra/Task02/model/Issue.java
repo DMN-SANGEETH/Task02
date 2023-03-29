@@ -34,7 +34,7 @@ public class Issue {
     private  Date publicationDate;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "states_id")
+    @JoinColumn(name = "status_id")
     @JsonIgnore
     private  IssueStatus issueStatus;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

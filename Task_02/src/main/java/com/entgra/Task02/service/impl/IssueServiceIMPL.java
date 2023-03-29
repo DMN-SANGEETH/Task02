@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import com.entgra.Task02.dto.response.IssueResponseDto;
 import com.entgra.Task02.service.IssueService;
 import lombok.Data;
+import org.modelmapper.TypeToken;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -85,7 +86,9 @@ public class IssueServiceIMPL implements IssueService {
         return issue;
     }
 
-
-
-
+    @Override
+    public List<IssueResponseDto> issuesStatusById(int statusId) {
+        List<Issue> issues = new ArrayList<>(issueRepo.findAllByIssueStatusAndIssueStatusContains(statusId));
+        return modelMapper.map(issues, new TypeToken<List<IssueResponseDto>>(){}.getType());
+    }
 }
